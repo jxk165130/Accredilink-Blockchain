@@ -18,25 +18,30 @@
 
 namespace accredilink.employee.biznet
 
-participant SampleParticipant identified by participantId {
-  o String participantId
-  o String firstName
-  o String lastName
+asset Employee identified by empID{
+  o String empID
+  o String empName
+  o String empSSN
+  o String empAddr
+  o String phoneNum
+  o Boolean employed
+
 }
 
-asset SampleAsset identified by assetId {
-  o String assetId
-  --> SampleParticipant owner
-  o String value
+participant ogranization identified by orgKey {
+  o String orgKey
 }
 
-transaction SampleTransaction {
-  --> SampleAsset asset
-  o String newValue
+participant customer identified by custKey {
+  o String custKey
 }
 
-event SampleEvent {
-  --> SampleAsset asset
-  o String oldValue
-  o String newValue
+transaction add {
+  o String detail
+
+}
+
+transaction update {
+  o String detail
+
 }
