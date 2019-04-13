@@ -25,15 +25,18 @@ asset Employee identified by empID{
   o String empAddr
   o String phoneNum
   o Boolean employed
+  --> Ogranization employer
 
 }
 
-participant ogranization identified by orgKey {
+participant Ogranization identified by orgKey {
   o String orgKey
+  o String orgName
 }
 
 participant customer identified by custKey {
   o String custKey
+  o String custName
 }
 
 transaction add {
@@ -44,4 +47,8 @@ transaction add {
 transaction update {
   o String detail
 
+}
+
+event UpdateNotification {
+  
 }
